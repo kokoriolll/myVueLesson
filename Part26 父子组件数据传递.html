@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>title</title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+<!--这里就是MVVM中的View-->
+
+<!--
+1.父子组件数据传递?
+在Vue中子组件是不能访问父组件的数据的,
+如果子组件想要访问父组件的数据, 必须通过父组件传递
+
+2.如何传递数据
+2.1在父组件中通过v-bind传递数据
+   传递格式 v-bind:自定义接收名称 = "要传递数据"
+2.2在子组件中通过props接收数据
+   接收格式 props: ["自定义接收名称"]
+-->
+<div id="app">
+    <father>
+    </father>
+</div>
+<template id="father">
+    <div>
+        <p>{{name}}</p>
+        <p>{{age}}</p>
+        <!--1.这里将父组件的name通过parentname传递给了子组件-->
+        <son :propsname="name" :propsage="age"></son>
+    </div>
+</template>
+<template id="son">
+    <div>
+        <p>我是子组件</p>
+        <!--3.这里通过parentname使用了父组件传递过来的数据-->
+        <p>{{propsname}}</p>
+        <p>{{propsage}}</p>
+    </div>
+</template>
+<script>
+
+    Vue.component("father",{
+        template: "#father",
+        components: {
+            "son": {
+                template: "#son",
+                // 2.这里通过parentname接收了父组件传递过来的数据
+                props: ["propsname","propsage"]
+            }
+        },
+        data: function () {
+            return {
+                name: "张三",
+                age: 20
+            }
+        },
+    });
+
+    // 这里就是MVVM中的View Model
+    let vue = new Vue({
+        el: '#app',
+        // 这里就是MVVM中的Model
+        data: {
+        },
+        // 专门用于存储监听事件回调函数
+        methods: {
+            
+        },
+        // 专门用于定义局部指令的
+        directives: {
+            
+        },
+        // 专门用于定义计算属性的
+        computed: {
+            
+        },
+        // 专门用于定义局部组件的
+        components: {
+
+        }
+    });
+</script>
+</body>
+</html>

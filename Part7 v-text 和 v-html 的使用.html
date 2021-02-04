@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Part7 v-text 和 v-html 的使用</title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+<!--
+1.什么是v-text指令
+v-text就相当于过去学习的innerText
+
+2.什么是v-html指令
+v-html就相当于过去学习的innerHTML
+-->
+<div id="app">
+    <!-- 插值的方式：可以将指定的数据插入到指定的位置 -->
+    <p>+++++++{{name}}+++++++</p>
+    <!--插值的方式: 不会解析HTML-->
+    <p>+++++++{{msg}}+++++++</p>
+
+    <!--v-text的方式: 会覆盖原有的内容-->
+    <p v-text="name">+++++++{{}}+++++++</p>
+    <!--v-text的方式: 也不会解析HTML-->
+    <p v-text="msg">+++++++{{}}+++++++</p>
+
+
+    <!--v-html的方式: 会覆盖原有的内容-->
+    <p v-html="name">+++++++{{name}}+++++++</p>
+    <!--v-html的方式: 会解析HTML-->
+    <p v-html="msg">+++++++{{msg}}+++++++</p>
+
+</div>
+<script>
+    //创建一个Vue的实例对象
+    let vue = new Vue({
+        // 绑定控制区域
+        el: '#app',
+        // 控制区域数据
+        data: {
+            name: "张三",
+            msg: "<span>张三</span>"
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Part8 v-if v-else v-elseif 的使用</title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+<!--
+1.什么是v-if指令
+条件渲染: 如果v-if取值是true就渲染元素, 如果不是就不渲染元素
+
+2.v-if特点:
+如果条件不满足根本就不会创建这个元素(重点)
+
+3.v-if注意点
+v-if可以从模型中获取数据
+v-if也可以直接赋值一个表达式
+-->
+<!--
+4.v-else指令
+v-else指令可以和v-if指令配合使用, 当v-if不满足条件时就执行v-else就显示v-else中的内容
+
+5.v-else注意点
+v-else不能单独出现
+v-if和v-else中间不能出现其它内容
+-->
+<!--
+6.v-else-if指令
+v-else-if可以和v-if指令配合使用, 当v-if不满足条件时就依次执行后续v-else-if, 哪个满足就显示哪个
+
+7.v-else-if注意点
+和v-else一样
+-->
+<div id="app">
+    <!--<p>{{ name }}</p>
+    <p v-if="show">show</p>
+    <p v-if="hidden">hidden</p>-->
+    <!--<p v-if="true">show</p>
+    <p v-if="false">hidden</p>-->
+
+    <!--<p v-if="age >= 18">成年人</p>
+    <p v-else>未成年人</p>-->
+
+    <p v-if="score>=80">优秀</p>
+    <p v-else-if="score>=60">及格</p>
+    <p></p>
+    <p v-else>差</p>
+
+</div>
+<script>
+    //创建一个Vue的实例对象
+    let vue = new Vue({
+        // 绑定控制区域
+        el: '#app',
+        // 控制区域数据
+        data: {
+            name: "",
+            show: true,
+            hidden: false,
+            age: 18,
+            score: 20
+        }
+    });
+</script>
+</body>
+</html>

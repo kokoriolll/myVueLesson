@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>title</title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+
+<!--
+1.数据和方法的多级传递
+在Vue中如果儿子想使用爷爷的数据, 必须一层一层往下传递
+在Vue中如果儿子想使用爷爷的方法, 必须一层一层往下传递
+-->
+<!--这里就是MVVM中的View-->
+<div id="app">
+    <grandfather></grandfather>
+</div>
+<template id="grandfather">
+    <div>
+        <p>祖父组件</p>
+        <p>{{name}}</p>
+        <button @click="gfFn">祖父组件</button>
+        <father :gfname="name" @gffn="gfFn"></father>
+    </div>
+</template>
+<template id="father">
+    <div>
+        <p>父组件</p>
+        <p>{{gfname}}</p>
+        <button @click="gFn">父组件</button>
+        <son :fname="gfname" @ffn="gFn"></son>
+    </div>
+</template>
+<template id="son">
+    <div>
+        <p>子组件</p>
+        <p>{{fname}}</p>
+        <button @click="sFn">子组件</button>
+    </div>
+</template>
+<script>
+    Vue.component("grandfather",{
+        // 爷爷组件
+        template: "#grandfather",
+        data: function () {
+            return {
+                name: "张三",
+            }
+        },
+        methods: {
+            gfFn(){
+                alert("msg");
+            }
+        },
+        components: {
+            // 父组件
+            "father": {
+                template: "#father",
+                props: ["gfname"],
+                methods: {
+                    gFn () {
+                        this.$emit("gffn");
+                    },
+                },
+                components: {
+                    // 子组件
+                    "son": {
+                        template: "#son",
+                        props: ["fname"],
+                        methods: {
+                            sFn() {
+                                this.$emit("ffn")
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    });
+
+    // 这里就是MVVM中的View Model
+    let vue = new Vue({
+        el: '#app',
+        // 这里就是MVVM中的Model
+        data: {
+        },
+        // 专门用于存储监听事件回调函数
+        methods: {
+
+        },
+        // 专门用于定义局部指令的
+        directives: {
+
+        },
+        // 专门用于定义计算属性的
+        computed: {
+
+        },
+        // 专门用于定义局部组件的
+        components: {
+
+        }
+    });
+</script>
+</body>
+</html>

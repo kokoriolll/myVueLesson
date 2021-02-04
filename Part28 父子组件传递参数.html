@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>title</title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+<!--这里就是MVVM中的View-->
+
+<!--
+1.如何将子组件数据传递给父组件
+既然我们可以将父组件的方法传递给子组件
+既然我们可以在子组件中调用父组件中的方法,
+那么我们就可以在调用方法的时候给方法传递参数
+传递的参数, 就是我们需要传递的数据
+-->
+<div id="app">
+    <father>
+    </father>
+</div>
+<template id="father">
+    <div>
+        <button @click="msg">按钮</button>
+        <p>我是父组件</p>
+        <!--这里通过fathermsg将父组件的say方法传递给了子组件-->
+        <son @fathermsg="msg"></son>
+    </div>
+</template>
+<template id="son">
+    <div>
+        <button @click="fnMsg">按钮</button>
+        <p>我是子组件</p>
+    </div>
+</template>
+<script>
+    // 父组件
+    Vue.component("father",{
+        template: "#father",
+        methods: {
+            msg(data) {
+                /*alert("test");*/
+                console.log(data);
+            },
+        },
+        // 子组件
+        components: {
+            "son": {
+                template: "#son",
+                // 第一个参数: 需要调用的函数名称
+                // 后续的参数: 给调用的函数传递的参数
+                methods: {
+                    fnMsg () {
+                       this.$emit("fathermsg","传递的参数");
+                    },
+                }
+            }
+        }
+    });
+
+    // 这里就是MVVM中的View Model
+    let vue = new Vue({
+        el: '#app',
+        // 这里就是MVVM中的Model
+        data: {
+        },
+        // 专门用于存储监听事件回调函数
+        methods: {
+            
+        },
+        // 专门用于定义局部指令的
+        directives: {
+            
+        },
+        // 专门用于定义计算属性的
+        computed: {
+            
+        },
+        // 专门用于定义局部组件的
+        components: {
+        
+        }
+    });
+</script>
+</body>
+</html>

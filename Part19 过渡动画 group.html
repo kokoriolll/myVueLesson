@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>title</title>
+    <script src="js/vue.js"></script>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .v-enter{
+        opacity: 0;
+    }
+    .v-enter-to{
+        opacity: 1;
+    }
+    .v-enter-active{
+        transition: all 3s;
+    }
+    .v-leave{
+        opacity: 1;
+    }
+    .v-leave-to{
+        opacity: 0;
+    }
+    .v-leave-active{
+        transition: all 3s;
+    }
+</style>
+<body>
+<!--这里就是MVVM中的View-->
+
+<!--
+1.如何同时给多个元素添加过渡动画
+通过transition可以给单个元素添加过渡动画
+如果想给多个元素添加过渡动画, 那么就必须通过transition-group来添加
+
+transition-group和transition的用法一致, 只是一个是给单个元素添加动画, 一个是给多个元素添加动画而已
+-->
+
+<!--
+1.transition-group注意点:
+默认情况下transition-group会将动画的元素放到span标签中
+我们可以通过tag属性来指定将动画元素放到什么标签中
+
+2.transition-group动画混乱问题
+一般情况下组动画出现动画混乱都是因为v-for就地复用导致的
+我们只需要保证所有数据key永远是唯一的即可
+-->
+<div id="app">
+
+    <form>
+        <input type="text" v-model="name">
+        <input type="submit"@click.prevent="add">
+    </form>
+
+    <transition-group appear tag="ul">
+        <li v-for="(persons,index) in persons" :key="persons.id" @click="del(index)">
+            <!-- 不能使用Index作为标识 -->
+            <!--<li v-for="(persons,index) in persons" :key="index">-->
+            <input type="checkbox">
+            <span>
+                {{index}}----{{persons.name}}
+            </span>
+        </li>
+    </transition-group>
+
+</div>
+<script>
+    // 这里就是MVVM中的View Model
+    let vue = new Vue({
+        el: '#app',
+        // 这里就是MVVM中的Model
+        data: {
+            persons:[
+                {name: "zs" , id : 1},
+                {name: "ls" , id : 2},
+                {name: "ww" , id : 3}
+            ],
+            name: "",
+        },
+        // 专门用于存储监听事件回调函数
+        methods: {
+            add () {
+                let newPerson = {name: this.name, id: this.persons.length + 1};
+                this.persons.push(newPerson);
+                /*this.persons.unshift(newPerson);*/
+                this.name = "";
+
+            },
+            del (index) {
+                this.persons.splice(index,1);
+            }
+        },
+        // 专门用于定义局部指令的
+        directives: {
+
+        },
+        // 专门用于定义计算属性的
+        computed: {
+
+        }
+    });
+</script>
+</body>
+</html>
