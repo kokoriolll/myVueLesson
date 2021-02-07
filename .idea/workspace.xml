@@ -10,9 +10,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
-        <option value="Vue Single File Component" />
         <option value="JavaScript File" />
+        <option value="Vue Single File Component" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -30,7 +30,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.linters.configure.manually.selectedeslint" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/OneDrive/Web/xindahang" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lesson-elementui/src" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -46,14 +46,16 @@
     <property name="settings.editor.selected.configurable" value="settings.javascript.linters.eslint" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\KoKoRiolll\OneDrive\Web\Vue" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Web\vue\lesson-elementui\src" />
       <recent name="C:\Users\Administrator\OneDrive\Web\Vue" />
       <recent name="C:\Users\Administrator\OneDrive\Web\Vue\js" />
       <recent name="C:\Users\KoKoRiolll\OneDrive\Web\Vue" />
       <recent name="C:\Users\KoKoRiolll\OneDrive\Web\Vue\Vue核心基础\09-常用指令v-show" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Web\vue\lesson-elementui\src" />
+      <recent name="C:\Users\KoKoRiolll\OneDrive\Web\Vue" />
     </key>
   </component>
   <component name="ServiceViewManager">
@@ -114,7 +116,8 @@
       <workItem from="1612418921574" duration="7175000" />
       <workItem from="1612445230751" duration="1964000" />
       <workItem from="1612488238908" duration="3168000" />
-      <workItem from="1612492725421" duration="14338000" />
+      <workItem from="1612492725421" duration="15058000" />
+      <workItem from="1612679935291" duration="9962000" />
     </task>
     <servers />
   </component>
