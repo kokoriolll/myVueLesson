@@ -1,6 +1,8 @@
 import Vue from "vue"
 import App from "./App.vue"
 import router from './router'
+import Vant from 'vant'
+import 'vant/lib/index.css'
 
 // 1.完整导入饿了么UI和样式
 //import ElementUI from 'element-ui'
@@ -13,6 +15,7 @@ import {Button,Switch,Row,Rate,DatePicker} from "element-ui";
 
 // 2.告诉VUE，项目中使用饿了么UI
 //Vue.use(ElementUI);
+Vue.use(Vant)
 
 // 2.告诉VUE，项目中使用饿了么UI某个插件
 Vue.use(Row);

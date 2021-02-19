@@ -10,9 +10,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
-        <option value="Vue Single File Component" />
         <option value="HTML File" />
+        <option value="Vue Single File Component" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -29,8 +29,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="js.linters.configure.manually.selectedeslint" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/lesson-elementui/src" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/vue-plugin/src/plugin/loading" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -44,14 +43,15 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="settings.javascript.linters.eslint" />
+    <property name="ts.external.directory.path" value="D:\Program Files\JetBrains\WebStorm 2019.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Web\vue\vue-plugin\src\plugin\loading" />
       <recent name="D:\Web\vue\lesson-elementui\src" />
       <recent name="C:\Users\Administrator\OneDrive\Web\Vue" />
       <recent name="C:\Users\Administrator\OneDrive\Web\Vue\js" />
       <recent name="C:\Users\KoKoRiolll\OneDrive\Web\Vue" />
-      <recent name="C:\Users\KoKoRiolll\OneDrive\Web\Vue\Vue核心基础\09-常用指令v-show" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Web\vue\lesson-elementui\src" />
@@ -117,7 +117,11 @@
       <workItem from="1612445230751" duration="1964000" />
       <workItem from="1612488238908" duration="3168000" />
       <workItem from="1612492725421" duration="15058000" />
-      <workItem from="1612679935291" duration="9962000" />
+      <workItem from="1612679935291" duration="10257000" />
+      <workItem from="1612745352091" duration="5624000" />
+      <workItem from="1612765476215" duration="4554000" />
+      <workItem from="1613695929155" duration="8146000" />
+      <workItem from="1613714766712" duration="10034000" />
     </task>
     <servers />
   </component>
@@ -125,10 +129,14 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="744" y="277" key="FileChooserDialogImpl" timestamp="1612513972946">
+    <state x="556" y="181" key="#ESLint" timestamp="1613696042928">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
-    <state x="744" y="277" key="FileChooserDialogImpl/0.0.1920.1036@0.0.1920.1036" timestamp="1612513972946" />
+    <state x="556" y="181" key="#ESLint/0.0.1920.1036@0.0.1920.1036" timestamp="1613696042928" />
+    <state x="744" y="277" key="FileChooserDialogImpl" timestamp="1613728800518">
+      <screen x="0" y="0" width="1920" height="1036" />
+    </state>
+    <state x="744" y="277" key="FileChooserDialogImpl/0.0.1920.1036@0.0.1920.1036" timestamp="1613728800518" />
     <state x="686" y="136" width="1236" height="714" key="SettingsEditor" timestamp="1612508293633">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
